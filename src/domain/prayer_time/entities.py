@@ -1,17 +1,25 @@
 # src/domain/prayer_time/entities.py
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+from datetime import date, time
+from typing import Optional
 
 @dataclass(frozen=True)
 class PrayerSchedule:
     """
-    Mewakili jadwal sholat untuk satu hari penuh. 
-    Ini adalah entitas domain murni.
+    Mewakili jadwal salat harian.
+    'frozen=True' membuatnya tidak bisa diubah (immutable).
     """
-    date: str
-    fajr: str
-    sunrise: str
-    dhuhr: str
-    asr: str
-    maghrib: str
-    isha: str
+    date: date
+    imsak: time
+    fajr: time
+    sunrise: time
+    dhuhr: time
+    asr: time
+    maghrib: time
+    isha: time
+    
+    # --- KOLOM BARU DITAMBAHKAN DI SINI ---
+    # Bersifat opsional, jadi tidak akan mengganggu kode yang sudah ada.
+    tahajjud: Optional[str] = None
+    dhuha: Optional[str] = None

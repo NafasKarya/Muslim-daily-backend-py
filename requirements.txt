@@ -1,3 +1,20 @@
-Flask>=2.0
+# requirements.txt
+
+# Framework utama
+fastapi
+uvicorn[standard]
+
+# Untuk scraping dan request HTTP
+requests
+beautifulsoup4
+pandas
+
+# Untuk automasi browser
+selenium
+webdriver-manager
+
+# Untuk konversi tanggal
 hijri-converter>=2.2
+
+# Untuk membaca variabel lingkungan (opsional)
 python-dotenv>=0.19
